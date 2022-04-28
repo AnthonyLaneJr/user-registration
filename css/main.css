@@ -6,9 +6,13 @@
     width: 70%;
     margin-left: auto;
     margin-right: auto;  
+    
 }
 h2{
     text-decoration: underline;
+}
+h1.login-title{
+    margin-left: -10%;
 }
 header.site-init{
     background-color: cadetblue;
@@ -29,6 +33,9 @@ header.site-init{
     margin-right: 30px;
     text-decoration: none;
 }
+a.menu :hover{
+    cursor: grab;
+}
 label{
     display: inline-block;
     width: 20%;
@@ -38,4 +45,8 @@ input{
 }
 .register-btn{
     width: 71.5%;
+}
+
+.input-error{
+    border: 3px solid red;
 }

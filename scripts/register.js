@@ -2,16 +2,47 @@
 function User(email, password, age, firstName, lastName, phoneNumber, address, gender, favColor, paymentMethod){
     this.email=email;
     this.password=password;
+    this.age=age;
     this.firstName=firstName;
     this.lastName=lastName;
-    this.age=age;
-    this.address=address;
     this.phone=phoneNumber;
+    this.address=address;
     this.gender=gender;
     this.color=favColor;
     this.payMethod=paymentMethod;
 }
 
+function clearInputs(){
+    $(`#txtEmail`).val(``);
+    $(`#txtPassword`).val(``);
+    $(`#txtFirstName`).val(``);
+    $(`#txtLastName`).val(``);
+    $(`#txtAge`).val(``);
+    $(`#txtAddress`).val(``);
+    $(`#txtPhone`).val(``);
+    $(`#txtGender`).val(``);
+    $(`#txtColor`).val(``);
+    $(`#txtPay`).val(``);
+}
+function isValid(user){
+    //assume that the values are true
+    //returns value as false if information is not up to par (i.e. lenght at 0 or no data input)
+    let valid=true;
+    $(`input`).removeClass(`input-error`);
+    if(user.email.length==0){
+        valid=false;
+        console.error(`invalid Email`);
+        $(`#txtEmail`).addClass(`input-error`);}
+    if(user.password.length==0){
+        valid=false;
+        console.error(`invalid Password`);
+        $(`#txtPassword`).addClass(`input-error`);}
+    if(user.payMethod.length==0){
+        valid=false;
+        console.error(`invalid PayMethod`);
+        $(`#txtPay`).addClass(`input-error`);}
+        return valid;
+}
 function register(){
     let inputEmail=$(`#txtEmail`).val();
     let inputPassword=$(`#txtPassword`).val();
@@ -25,16 +56,15 @@ function register(){
     let inputPayMethod=$(`#txtPay`).val();
 
     
-    let newUser= new User(inputEmail, inputPassword, inputFirstName, inputLastName, inputAge, inputAddress, inputPhone, inputGender, inputColor, inputPayMethod)
+    let newUser= new User(inputEmail, inputPassword, inputAge, inputFirstName, inputLastName, inputPhone, inputAddress, inputGender, inputColor, inputPayMethod);
+    if(isValid(newUser)){
+    saveUser(newUser); //function located in storemanager js
 
-    console.log(newUser)
+    clearInputs();
 
-    // clearInputs();
-}
+}}
 
-// function clearInputs(){
 
-// }
 // input value old method style - new method uses Jquery $ shortcut
 
 // let inputEmail=document.getElementById(`txtEmail`);
