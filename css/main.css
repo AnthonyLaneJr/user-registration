@@ -79,3 +79,57 @@ div.btn{
     padding: .5rem;
     border-radius: 5px;
 }
+
+/* User log page */
+.user-title{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+table{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+th{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+tr{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+.tdfName{
+    width: 8%;
+}
+.tdlName{
+    width: 8%;
+}
+.tdemail{
+    width: 20%;
+}
+.tdpass{
+    width: 10%;
+}
+.tdgen{
+    width: 8%;
+}
+.tdage{
+    width: 6%;
+}
+.tdphone{
+    width: 10%;
+}
+.tdaddress{
+    width: 14%;
+}
+.tdcolor{
+    width: 8%;
+}
+.tdpay{
+    width: 8%;
+}
