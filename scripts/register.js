@@ -43,6 +43,31 @@ function isValid(user){
         $(`#txtPay`).addClass(`input-error`);}
         return valid;
 }
+//  one way to validate password
+// function validatePass(user){
+//     //get the value from the form
+//     let valid=true;
+//     //compare is the password is less than 6 characters, if statement
+//     if(user.password.length<6){
+//         valid=false;
+//         $(`#txtPassword`).addClass(`input-error`);
+//         alert(`password must contain 6 numbers or letters`);}
+//         //Jquery function to change the css
+//         return valid;
+// }
+
+//  another way-professors example
+    function validatePass(){
+        let txtPass=$(`#txtPassword`);
+        let password=txtPass.val();
+        //compare is the password is less than 6 characters, if statement
+        if(password.length<6){
+            txtPass.css("background","red"); //jquery funciton to change css
+        }else{
+            txtPass.css("background","green");///jquery function to change css
+        }
+    }
+
 function register(){
     let inputEmail=$(`#txtEmail`).val();
     let inputPassword=$(`#txtPassword`).val();
@@ -61,6 +86,8 @@ function register(){
     saveUser(newUser); //function located in storemanager js
 
     clearInputs();
+    //alternative clear using jquery to clear using tag name 
+    // $(`input`).val(""); this will clear all input fields
 
 }}
 
@@ -86,6 +113,8 @@ console.log(user1,user2)
 
 function init(){
     console.log(`Init Function`);
+    //hook event
+    $(`#txtPassword`).keyup(validatePass);//executed everytime that something is inputted into the element
 }
 
 window.onload=init;

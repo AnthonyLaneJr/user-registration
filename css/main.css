@@ -35,18 +35,47 @@ header.site-init{
 }
 a.menu :hover{
     cursor: grab;
-}
-label{
+}/* label{
     display: inline-block;
     width: 20%;
 }
 input{
     width: 50%;
 }
-.register-btn{
-    width: 71.5%;
-}
-
+*/
 .input-error{
     border: 3px solid red;
+}
+
+/* form class css formatting*/
+ .form-container{
+     background-color: #dedede;
+     border-radius: 5px;
+     padding: 1rem;
+     margin-top: 1rem;
+ }
+.form-control{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.form-control:first-of-type{
+    margin-top: 1rem;
+}
+.form-control label{
+    flex-basis: 20%;
+    text-align: right;
+    margin-right: 1rem;
+}
+.form-control input{
+    flex-basis: 70%;
+    padding: 5px;
+}
+div.btn{
+    margin-left: 80%;
+    border: 1px solid #888787;
+    background-color: #dedede;
+    padding: .5rem;
+    border-radius: 5px;
 }
