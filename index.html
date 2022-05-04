@@ -22,7 +22,19 @@
                 </nav>
         </div>
     </header>
-    <main>
+    <main class="container">
+        <div class="form-container">
+            <div class="form-control">
+                <label>Email</label>
+                <input type="text" id="txtEmail">
+            </div>
+            <div class="form-control">
+                <label>Password</label>
+                <input type="password" id="txtPassword">
+            </div>
+            <button id="loginBtn">login</button>
+            <div class="form-control"><p class="alert-error hide" id="alertError">Invalid Credentials</p></div>
+        </div>
         <!--        practice 2 js work
             
             <button id="btn-counter" >Click</button>
@@ -51,7 +63,8 @@
 
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts/practice.js"></script>
+    <script src="scripts/storageManager.js"></script>
+    <script src="scripts/login.js"></script>
     
 </body>
 </html>

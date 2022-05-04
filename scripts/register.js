@@ -32,16 +32,29 @@ function isValid(user){
     if(user.email.length==0){
         valid=false;
         console.error(`invalid Email`);
-        $(`#txtEmail`).addClass(`input-error`);}
+        $(`#txtEmail`).addClass(`input-error`);
+        displayError(`Invalid Email`);
+    }
     if(user.password.length==0){
         valid=false;
         console.error(`invalid Password`);
-        $(`#txtPassword`).addClass(`input-error`);}
+        $(`#txtPassword`).addClass(`input-error`);
+        displayError(`Password must contain 6 characters`);
+    }
     if(user.payMethod.length==0){
         valid=false;
         console.error(`invalid PayMethod`);
-        $(`#txtPay`).addClass(`input-error`);}
+        $(`#txtPay`).addClass(`input-error`);
+        displayError(`Invalid Payment Method`);
+    }
         return valid;
+}
+
+function displayError(msg){
+    $(`#alertError`).removeClass(`hide`).text(msg);
+}
+function hideError(){
+    $(`#alertError`).addClass(`hide`);
 }
 //  one way to validate password
 // function validatePass(user){
@@ -84,7 +97,7 @@ function register(){
     let newUser= new User(inputEmail, inputPassword, inputAge, inputFirstName, inputLastName, inputPhone, inputAddress, inputGender, inputColor, inputPayMethod);
     if(isValid(newUser)){
     saveUser(newUser); //function located in storemanager js
-
+    hideError(); //hides error boxes
     clearInputs();
     //alternative clear using jquery to clear using tag name 
     // $(`input`).val(""); this will clear all input fields
